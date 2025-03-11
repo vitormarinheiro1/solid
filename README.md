@@ -1,17 +1,82 @@
-### Design Patterns
+# **Sistema de Gerenciamento de Pedidos**
 
+## **Descrição**
 
-** SOLID ** - Não faz parte dos design patterns, mas por serem boas práticas que garantem diversos benefícios é bem comum de aprender ambos os temas ao mesmo tempo.
+Este projeto implementa um sistema de gerenciamento de pedidos que simula um fluxo de pedidos de clientes, incluindo cálculo de totais, notificações, pagamento e atualização de status.
 
-“S” Single Responsibility Principle (Princípio de responsabilidade única): uma classe deve ter uma e apenas uma razão para mudar.
+---
 
-“O” Open-Closed Principle (Princípio aberto/fechado): objetos devem estar disponíveis para extensão, mas fechados para modificação.
+## **Funcionalidades**
 
-“L” Liskov Substitution Principle (Princípio de substituição de Liskov): uma subclasse deve ser substituível por sua superclasse.
+- **Cadastro de Clientes e Itens**: Gerencia informações de clientes e produtos.
+- **Gestão de Pedidos**: Suporte a pedidos para delivery e retirada.
+- **Sistema de Pagamento**: Simulação de processamento de pagamentos.
+- **Notificações**: Envio de notificações por e-mail e SMS.
+- **Atualização de Status**: Rastreamento e notificação do status do pedido.
+---
 
-“I” Interface Segregation Principle (Princípio de segregação de interface): uma classe não deve ser obrigada a implementar métodos e interfaces que não serão utilizadas.
+## **Tecnologias Utilizadas**
 
-“D” Dependency Inversion Principle (Princípio de inversão de dependência): dependa de abstrações e não de implementações.
+- **Python 3.10+**
+- Design Patterns: _Factory Method, Template, Strategy, Facade, Observer_.
+- Princípios **SOLID**.
 
+---
 
-FACADE -> não precisa fazer uma escolha, é para enviar todas as notificações
+## **Estrutura do Projeto**
+
+```
+.
+├── cliente.py
+├── item.py
+├── main.py
+├── notificacao/
+│   ├── notificacao.py
+│   ├── notificacao_email.py
+│   ├── notificacao_sms.py
+│   └── notificacao_facade.py
+├── observador/
+│   └── observador_status.py
+├── pagamento/
+│   ├── pagamento.py
+│   ├── pagamento_cartao.py
+│   └── pagamento_pix.py
+├── pedido/
+│   ├── pedido.py
+│   ├── pedido_delivery.py
+│   └── pedido_retirada.py
+└── README.md
+```
+
+---
+
+## **Como Executar**
+
+1. Acesse o arquivo `main.py`.
+2. Execute o programa:
+   ```bash
+   python main.py
+   ```
+
+---
+
+## **Exemplo de Uso**
+
+- **Cadastrar Cliente e Itens**:
+  Crie um cliente e adicione itens ao pedido.
+- **Criar Pedido**:
+  Escolha entre _delivery_ ou _retirada_.
+- **Efetuar Pagamento**:
+  Simule pagamentos via Pix ou Cartão.
+- **Receber Notificações**:
+  Clientes recebem notificações do status do pedido.
+
+---
+
+## **Autoria**
+
+Projeto desenvolvido como estudo dos princípios **SOLID** e padrões de design para organização de software escalável e modular.
+
+Feito pela Escola de Programação da Alura!
+
+Fique à vontade para contribuir! 🎉
